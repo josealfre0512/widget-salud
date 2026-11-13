@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agente de Salud</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="widget-container">
+    <div class="header">
+      <span class="avatar">🤖</span>
+      <div class="header-info">
+        <span class="title">Monitor Vital</span>
+        <select id="mode-selector" class="mode-select">
+          <option value="sencillo">Modo Sencillo (Pausas) ⏱️</option>
+          <option value="avanzado">Modo Avanzado (Nutrición) 🍎</option>
+        </select>
+      </div>
+      <!-- Botón de configuración -->
+      <button id="btn-config" class="icon-btn">⚙️</button>
+    </div>
+    
+    <!-- Panel de configuración -->
+    <div id="config-panel" class="config-panel hidden">
+      <h3>Ajustes del Perfil</h3>
+      
+      <label>Meta diaria (Calorías):</label>
+      <input type="number" id="input-calorias" placeholder="Ej: 2200" />
+      
+      <label>Horas máximas seguidas:</label>
+      <input type="number" id="input-horas" placeholder="Ej: 4" />
+      
+      <button id="btn-guardar-perfil">Guardar Memoria</button>
+    </div>
+    
+    <!-- Única zona de chat -->
+    <div class="chat-box" id="chat-box">
+      <div class="message agent">🤖 Sistemas en línea. ¿Cómo están esos niveles de estrés y energía antes de empezar a compilar?</div>
+    </div>
+    
+    <!-- Única zona de inputs (Comida + Texto) -->
+    <div class="input-area">
+      <input type="number" id="input-comida" placeholder="Kcal" title="Registrar calorías" />
+      <button id="btn-comida" class="food-btn">➕🍎</button>
+      <input type="text" id="user-input" placeholder="Responde aquí..." autocomplete="off" />
+    </div>
+  </div> <!-- Cierre correcto del widget -->
+  
+  <script type="module" src="main.js"></script>
+</body>
+</html>
